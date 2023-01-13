@@ -1,7 +1,5 @@
 Flask
 pandas
 numpy
-matplotlib.pyplot
-seaborn
-sklearn
 pickle
+matplotlib
