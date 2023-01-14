@@ -1,5 +1,50 @@
+<html>
+    <head>
+        <title>ML Project</title>
+        <h1 align="center">Boston Housing Price prediction</h1>
 
-<h1>
-    WELCOME and don't forget it's just the begining!
-</h1>
-    
+        <style>
+            form {
+
+                padding: 20px;
+                background-color: #f10d512f;
+                width: 30%;
+                margin: 0 auto;
+                border-radius: 10px;
+                font-size: 20px;
+                
+            }
+            body {background-color: rgba(248, 70, 0, 0.349);}
+            #abc {text-align: center; color: rgb(255, 255, 255);}
+            .inp {margin-left: 30%;}
+            .inp button {margin-left: 28%; width: 40%; padding:3px; font-size: 18px; text-size-adjust: 18px; border-radius: 5px;}
+            .inp input {padding: 4px; margin-bottom: 5px; margin-left: 25%;}
+        </style>
+    </head>
+
+    <body>
+        <marquee>This is my first End to End ML Project</marquee>
+        <h3 id="abc">To know the estimated price of the house first enter the neccessary information in the form.</h3>
+        <form class="inp" action="{{ url_for('predict')}}" method="post">
+            <input pattern="\d" required><!--Applying validation using regex-->>
+            <input name="CRIM" placeholder="CRIM", required="required"><br>
+            <input name="ZN" placeholder="ZN", required="required"><br>
+            <input name="INDUS" placeholder="INDUS", required="required"><br>
+            <input name="CHAS" placeholder="CHAS", required="required"><br>
+            <input name="NOX" placeholder="NOX", required="required"><br>
+            <input name="RM" placeholder="RM", required="required", required="required"><br>
+            <input name="AGE" placeholder="AGE", required="required"><br>
+            <input name="DIS" placeholder="DIS", required="required"><br>
+            <input name="RAD" placeholder="RAD", required="required"><br>
+            <input name="TAX" placeholder="TAX", required="required"><br>
+            <input name="PTRATIO" placeholder="PTRATIO", required="required"><br>
+            <input name="B" placeholder="B", required="required"><br>
+            <input name="LSTAT" placeholder="LSTAT", required="required"><br>
+            
+            <button type="submit" class="btn btn-primary btn-block btn-large">PREDICT</button>
+            
+        </form>
+
+    <p align="center"; style="font-size:25px;">{{prediction_text}}</p>
+    </body>
+</html>
